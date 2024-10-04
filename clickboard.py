@@ -1,6 +1,7 @@
 import argparse
 import os
 import tkinter as tk
+from pandas.io import clipboard
 
 
 if __name__ == "__main__":
@@ -16,10 +17,14 @@ if __name__ == "__main__":
         print(lines)
 
     window = tk.Tk()
+    
+    buttons = []
 
-    for line in lines:
-        button = tk.Button(text=line)
-        button.bind("", None)
+    def cbcopy(myword):
+       clipboard.copy(myword)
+        
+    for i, line in enumerate(lines):
+        button = tk.Button(text=line, command=lambda x = line: cbcopy(x))
         button.pack()
     window.title("Clickboard")
     window.mainloop()
