@@ -16,13 +16,10 @@ if __name__ == "__main__":
         lines = [line.rstrip() for line in file if len(line.strip()) > 0]
         print(lines)
 
-    window = tk.Tk()
-    
-    buttons = []
-
     def cbcopy(myword):
        clipboard.copy(myword)
-        
+    
+    window = tk.Tk()
     for i, line in enumerate(lines):
         button = tk.Button(text=line, command=lambda x = line: cbcopy(x))
         button.pack()
