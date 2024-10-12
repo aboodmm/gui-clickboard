@@ -6,7 +6,7 @@ from pandas.io import clipboard
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("filename", type=str)
+    parser.add_argument("filename", type=str, nargs='?', const="samplefile.txt", default="samplefile.txt")
     args = parser.parse_args()
 
     if os.environ.get('DISPLAY','') == '':
