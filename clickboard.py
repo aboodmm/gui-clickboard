@@ -14,7 +14,6 @@ if __name__ == "__main__":
 
     with open(args.filename, "r") as file:
         lines = [line.rstrip() for line in file if len(line.strip()) > 0]
-        print(lines)
 
     def cbcopy(myword):
        clipboard.copy(myword)
